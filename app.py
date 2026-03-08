@@ -14,6 +14,7 @@ from sklearn.metrics import (accuracy_score, recall_score, roc_auc_score, f1_sco
                              
 import shap
 import joblib
+import os
 
 title = "Multimodal Clinical Decision Support for Post-Stroke Cognitive Impairment"
 
@@ -21,6 +22,7 @@ st.set_page_config(page_title=f"{title}", layout="wide", page_icon="🖥️")
 
 # 加载归模型
 try:
+    st.write(os.path.exists("LogisticRegression.pkl")
     lrmodel = joblib.load("LogisticRegression.pkl")
     lrexplainer = joblib.load("explainer.pkl")
     
@@ -108,4 +110,5 @@ if bt:
     st.session_state.predata = data
     prefun()
 else:
+
     prefun()
