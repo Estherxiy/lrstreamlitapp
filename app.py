@@ -28,7 +28,7 @@ try:
     
     scaler = lrmodel.named_steps['scaler']
     clf = lrmodel.named_steps['clf']
-  st.write(123)
+    st.write(123)
 except:
     st.error("**错误：**未找到 LogisticRegression.pkl 文件或 explainer.pkl 文件，请检查路径。")
 
@@ -113,5 +113,6 @@ if bt:
 else:
 
     prefun()
+
 
 
