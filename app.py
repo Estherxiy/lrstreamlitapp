@@ -21,16 +21,14 @@ title = "Multimodal Clinical Decision Support for Post-Stroke Cognitive Impairme
 st.set_page_config(page_title=f"{title}", layout="wide", page_icon="🖥️")
 
 # 加载归模型
-try:
+if True:
     st.write(os.path.exists("explainer.pkl"))
     lrmodel = joblib.load("LogisticRegression.pkl")
     lrexplainer = joblib.load("explainer.pkl")
     
     scaler = lrmodel.named_steps['scaler']
     clf = lrmodel.named_steps['clf']
-    st.write(123)
-except:
-    st.error("**错误：**未找到 LogisticRegression.pkl 文件或 explainer.pkl 文件，请检查路径。")
+
 
 
 st.markdown(f'''
@@ -113,6 +111,7 @@ if bt:
 else:
 
     prefun()
+
 
 
 
