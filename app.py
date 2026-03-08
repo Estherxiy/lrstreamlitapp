@@ -22,7 +22,7 @@ st.set_page_config(page_title=f"{title}", layout="wide", page_icon="🖥️")
 
 # 加载归模型
 try:
-    st.write(os.path.exists("LogisticRegression.pkl")
+    st.write(os.path.exists("LogisticRegression.pkl"))
     lrmodel = joblib.load("LogisticRegression.pkl")
     lrexplainer = joblib.load("explainer.pkl")
     
@@ -112,3 +112,4 @@ if bt:
 else:
 
     prefun()
+
